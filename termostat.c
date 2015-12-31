@@ -131,6 +131,9 @@ static void t_updated(void)
 			break;
 	}
 	t_level_current = i - 1;
+	if (ui_state != ui_idle) {
+		return;
+	}
 	if (t_level_current < t_level_set) {
 		P1OUT |= HEATER;
 	} else {
