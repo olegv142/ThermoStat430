@@ -88,6 +88,7 @@ static void led_process(void)
 	if (ui_state == ui_idle) {
 		return;
 	}
+	P1OUT |= HEATER;
 	if (ui_state == ui_setting && !(wdt_clock & (1 << BLINK_SHIFT))) {
 		return;
 	}
